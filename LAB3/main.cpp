@@ -169,6 +169,36 @@ Node* top()
 
 };
 
+class Stack {
+
+     public:
+        LinkedList* linkedList;
+
+        Stack()
+        {
+            linkedList = new LinkedList();
+        }
+
+void push(int data) {
+    linkedList->addFirst(data);
+}
+
+void pop() {
+    linkedList->deleteFirst();
+}
+
+bool isEmpty() {
+    linkedList->isEmpty();
+}
+
+void printStack() {
+    linkedList->printList();
+}
+
+
+
+};
+
 int main()
 {
     Queue* myQueue= new Queue();
@@ -180,5 +210,9 @@ int main()
     myQueue->printList();
     cout<< "Size: " <<myQueue->size();
     cout<< " Top: " <<myQueue->top()->data;
+
+    Stack* myStack = new Stack();
+    myStack->push(31);
+    myStack->printStack();
     return 0;
 }
